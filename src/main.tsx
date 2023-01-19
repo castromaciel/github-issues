@@ -12,7 +12,13 @@ import { router } from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/styles.css'
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false
+    }
+  }
+})
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
