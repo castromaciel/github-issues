@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
-import { getLabelsFromApi } from '../services/getLabels'
+import { getLabels } from '../services'
 
 export const useLabels = () => {
   const labelsQuery = useQuery(
     ['labels'],
-    getLabelsFromApi,
+    getLabels,
     {
       // staleTime: 1000 * 60 * 60,
       placeholderData: [],

@@ -18,7 +18,7 @@ export const IssueItem: FC<Props> = ({
   return (
     <div
       className="card mb-2 issue"
-      onClick={() => navigate(`/issue/issue/${issue.number}`)}
+      onClick={() => navigate(`/issues/issue/${issue.number}`)}
     >
       <div className="card-body d-flex align-items-center">
         {
