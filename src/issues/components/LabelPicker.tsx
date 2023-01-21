@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import { FC } from 'react'
-import { Loading } from '../../shared/components/Loading'
+import { Loading } from '../../shared/components'
 import { useLabels } from '../hooks/useLabels'
 
 interface Props {

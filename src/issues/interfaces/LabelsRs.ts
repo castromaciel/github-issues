@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-export interface LabelsRs {
+export interface Label {
   id: number;
   node_id: string;
   url: string;
