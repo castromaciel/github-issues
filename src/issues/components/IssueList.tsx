@@ -1,7 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { FC } from 'react'
+import { Issue } from '../interfaces'
 import { IssueItem } from './IssueItem'
 
-export const IssueList = () => (
+interface Props {
+  issues: Issue[]
+}
+
+export const IssueList: FC<Props> = ({
+  issues
+}) => (
   <div className="card border-white">
     <div className="card-header bg-dark">
       <ul className="nav nav-pills card-header-pills">
@@ -17,7 +25,7 @@ export const IssueList = () => (
       </ul>
     </div>
     <div className="card-body text-dark">
-      { [1, 2, 3, 4].map((issue) => (<IssueItem key={issue} />)) }                
+      { issues.map((issue) => (<IssueItem key={issue.id} issue={issue} />)) }                
     </div>
   </div>
 )
