@@ -6,8 +6,8 @@ export const useLabels = () => {
     ['labels'],
     getLabels,
     {
-      // staleTime: 1000 * 60 * 60,
-      placeholderData: [],
+      staleTime: 1000 * 60 * 60,
+      // placeholderData: [],
       initialData: [{
         id: 1757816973,
         node_id: 'MDU6TGFiZWwxNzU3ODE2OTcz',
