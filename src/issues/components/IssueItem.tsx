@@ -65,6 +65,19 @@ export const IssueItem: FC<Props> = ({
           <span className="issue-subinfo">
             #{issue.number} opened 2 days ago by
             <span className="fw-bold">{issue.user.login}</span>
+            <div>
+              {
+                issue.labels.map((label) => (
+                  <span 
+                    key={label.id}
+                    className="badge rounded-pill m-1"
+                    style={{ backgroundColor: `#${label.color}`, color: 'black' }}
+                  >
+                    {label.name}
+                  </span>
+                ))
+              }
+            </div>
           </span>
         </div>
 

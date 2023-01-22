@@ -4,13 +4,13 @@ import { getIssues } from '../services'
 
 interface Props {
   state?: State
-  selectedLabels: string[]
+  labels: string[]
 }
 
-export const useIssues = ({ selectedLabels, state }:Props) => {
+export const useIssues = ({ labels, state }:Props) => {
   const issuesQuery = useQuery(
-    ['issues', { state, selectedLabels }],
-    () => getIssues(selectedLabels, state)
+    ['issues', { state, labels }],
+    () => getIssues(labels, state)
   )
 
   return {
