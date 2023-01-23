@@ -8,7 +8,9 @@ import { State } from '../interfaces'
 const ListView = () => {
   const [selectedLabels, setSelectedLabels] = useState<string[]>([])
   const [state, setState] = useState<State>()
-  const { issuesQuery } = useIssues({ state, labels: selectedLabels })
+  const {
+    issuesQuery, page, nextPage, prevPage 
+  } = useIssues({ state, labels: selectedLabels })
 
   const onLabelChanged = (labelName: string) => (
     selectedLabels.includes(labelName)
@@ -35,9 +37,24 @@ const ListView = () => {
             )
         }
         <div className="d-flex mt-2 justify-content-between align-items-center">
-          <button type="button" className="btn btn-outline-light">Prev</button>
-          <span>123</span>
-          <button type="button" className="btn btn-outline-light">Next</button>
+          <button
+            type="button"
+            className="btn btn-outline-light"
+            onClick={prevPage}
+            disabled={page === 1 || issuesQuery.isFetching}
+          >
+            Prev
+          </button>
+          <span>{page}</span>
+          <button
+            type="button"
+            className="btn btn-outline-light"
+            onClick={nextPage}
+            disabled={issuesQuery.isFetching}
+          >
+            Next
+
+          </button>
         </div>
 
       </div>
