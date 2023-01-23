@@ -5,6 +5,7 @@ import { useQueryClient } from '@tanstack/react-query'
 import { FC } from 'react'
 import { FiCheckCircle, FiInfo, FiMessageSquare } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
+import { timeSince } from '../../helpers'
 import { Issue, State } from '../interfaces'
 import { getIssueComments, getIssueInfo } from '../services'
 
@@ -63,8 +64,8 @@ export const IssueItem: FC<Props> = ({
         <div className="d-flex flex-column flex-fill px-2">
           <span>{issue.title}</span>
           <span className="issue-subinfo">
-            #{issue.number} opened 2 days ago by
-            <span className="fw-bold">{issue.user.login}</span>
+            #{issue.number} opened {timeSince(issue.created_at)} by 
+            <span className="fw-bold"> {issue.user.login} </span>
             <div>
               {
                 issue.labels.map((label) => (

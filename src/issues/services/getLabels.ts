@@ -1,5 +1,5 @@
 import { githubApi } from '../../api/githubApi'
-import { sleep } from '../../helpers/sleep'
+import { sleep } from '../../helpers'
 import { Label } from '../interfaces'
 
 export const getLabels = async ():Promise<Label[]> => {
