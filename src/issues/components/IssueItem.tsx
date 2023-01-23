@@ -50,7 +50,7 @@ export const IssueItem: FC<Props> = ({
 
   return (
     <div
-      className="card mb-2 issue"
+      className="bg-dark-02 card mb-2 issue"
       onClick={() => navigate(`/issues/issue/${issue.number}`)}
       onMouseEnter={presetData}
     >
@@ -62,7 +62,7 @@ export const IssueItem: FC<Props> = ({
         }     
 
         <div className="d-flex flex-column flex-fill px-2">
-          <span>{issue.title}</span>
+          <span className="text-grey-01">{issue.title}</span>
           <span className="issue-subinfo">
             #{issue.number} opened {timeSince(issue.created_at)} by 
             <span className="fw-bold"> {issue.user.login} </span>
@@ -82,7 +82,7 @@ export const IssueItem: FC<Props> = ({
           </span>
         </div>
 
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center text-grey-01">
           <img src={issue.user.avatar_url} alt="User Avatar" className="avatar" />
           <span className="px-2">{issue.comments}</span>
           <FiMessageSquare />

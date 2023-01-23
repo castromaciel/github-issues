@@ -1,3 +1,4 @@
+import { FaArrowLeft } from 'react-icons/fa'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { Loading } from '../../shared/components'
 import { IssueComment } from '../components/IssueComment'
@@ -16,7 +17,12 @@ const IssueView = () => {
   return (
     <div className="row mb-5">
       <div className="col-12 mb-3">
-        <Link to="./issues/list">Go Back</Link>
+        <Link to="./issues/list" className="d-flex align-items-center gap-2">
+          <FaArrowLeft />
+          <span>
+            Go Back
+          </span>
+        </Link>
       </div>
 
       <IssueComment issue={issueQuery.data} />

@@ -14,12 +14,12 @@ export const IssueList: FC<Props> = ({
   issues, onStateChanged, state
 }) => (
   <div className="card border-white">
-    <div className="card-header bg-dark">
-      <ul className="nav nav-pills card-header-pills">
+    <div className="card-header bg-dark-01">
+      <ul className="nav nav-pills card-header-pills gap-3">
         <li className="nav-item">
           <button
             type="button"
-            className={`nav-link ${!state ? 'active' : ''}`}
+            className={`btn btn-outline-light ${!state ? 'active' : ''}`}
             onClick={() => onStateChanged()}
           >
             All
@@ -29,7 +29,7 @@ export const IssueList: FC<Props> = ({
         <li className="nav-item">
           <button 
             type="button"
-            className={`nav-link ${state === State.Open ? 'active' : ''}`}
+            className={`btn btn-outline-light ${state === State.Open ? 'active' : ''}`}
             onClick={() => onStateChanged(State.Open)}
           >
             Open
@@ -39,7 +39,7 @@ export const IssueList: FC<Props> = ({
         <li className="nav-item">
           <button 
             type="button"
-            className={`nav-link ${state === State.Closed ? 'active' : ''}`}
+            className={`btn btn-outline-light ${state === State.Closed ? 'active' : ''}`}
             onClick={() => onStateChanged(State.Closed)}
           >
             Closed
@@ -48,7 +48,7 @@ export const IssueList: FC<Props> = ({
         </li>
       </ul>
     </div>
-    <div className="card-body text-dark">
+    <div className="bg-dark-01 card-body text-dark">
       { issues.map((issue) => (<IssueItem key={issue.id} issue={issue} />)) }                
     </div>
   </div>

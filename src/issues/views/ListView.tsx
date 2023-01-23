@@ -34,6 +34,12 @@ const ListView = () => {
               />
             )
         }
+        <div className="d-flex mt-2 justify-content-between align-items-center">
+          <button type="button" className="btn btn-outline-light">Prev</button>
+          <span>123</span>
+          <button type="button" className="btn btn-outline-light">Next</button>
+        </div>
+
       </div>
       
       <div className="col-4">
