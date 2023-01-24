@@ -9,7 +9,7 @@ const ListViewInfinite = () => {
   const [selectedLabels, setSelectedLabels] = useState<string[]>([])
   const [state, setState] = useState<State>()
   const {
-    issuesQuery
+    issuesQuery 
   } = useIssuesInfinite({ state, labels: selectedLabels })
 
   const onLabelChanged = (labelName: string) => (
@@ -36,8 +36,15 @@ const ListViewInfinite = () => {
               />
             )
         }
-        <div className="mt-2">
-          <button type="button" className="btn btn-outline-light">Load More</button>
+        <div className="my-3">
+          <button
+            type="button"
+            className="btn btn-outline-light"
+            disabled={!issuesQuery.hasNextPage || issuesQuery.isFetching}
+            onClick={() => issuesQuery.fetchNextPage()}
+          >
+            Load More
+          </button>
         </div>
 
       </div>
