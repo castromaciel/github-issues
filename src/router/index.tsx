@@ -1,9 +1,9 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom'
+import { createHashRouter, Navigate } from 'react-router-dom'
 import { App } from '../App'
 
 import { IssueView, ListView, ListViewInfinite } from '../issues/views'
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/issues',
     element: <App />,
