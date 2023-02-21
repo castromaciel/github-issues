@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 export interface Label {
   id: number;
   node_id: string;

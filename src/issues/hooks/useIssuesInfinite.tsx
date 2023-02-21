@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 import { useInfiniteQuery } from '@tanstack/react-query'
 import { State } from '../interfaces'
 import { getIssuesInfinite } from '../services'
@@ -13,7 +12,6 @@ export const useIssuesInfinite = ({ state, labels }: Props) => {
     ['issues', 'infinite', { state, labels }],
     (data) => getIssuesInfinite(data),
     {
-      // TODO: getNextPageParam()
       getNextPageParam: (lastPage, pages) => {
         if (!lastPage.length) return
 

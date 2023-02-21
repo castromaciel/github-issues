@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/jsx-one-expression-per-line */
 import { useQueryClient } from '@tanstack/react-query'
 import { FC } from 'react'
 import { FiCheckCircle, FiInfo, FiMessageSquare } from 'react-icons/fi'

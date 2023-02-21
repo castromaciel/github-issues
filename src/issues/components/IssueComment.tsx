@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Issue } from '../interfaces'

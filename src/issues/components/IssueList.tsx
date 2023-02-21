@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { FC } from 'react'
 import { Issue, State } from '../interfaces'
 import { IssueItem } from './IssueItem'
