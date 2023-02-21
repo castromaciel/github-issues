@@ -10,7 +10,7 @@ import { router } from './router'
 
 //! Remover enable css source maps
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './assets/styles.css'
+import './shared/styles/styles.css'
 
 const queryClient = new QueryClient({
   defaultOptions: {
