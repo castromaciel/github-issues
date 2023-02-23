@@ -1,5 +1,4 @@
 import { githubApi } from '../../api/githubApi'
-import { sleep } from '../../helpers'
 import { Issue, State } from '../interfaces'
 
 interface Props {
@@ -19,7 +18,6 @@ export const getIssuesInfinite = async ({
 }: QueryProps):Promise<Issue[]> => {
   const [,, args] = queryKey
   const { labels, state } = args as Props
-  await sleep(2)
 
   const params = new URLSearchParams()
 

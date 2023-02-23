@@ -1,5 +1,4 @@
 import { githubApi } from '../../api/githubApi'
-import { sleep } from '../../helpers'
 import { Issue, State } from '../interfaces'
 
 interface Props {
@@ -13,8 +12,6 @@ export const getIssues = async ({
   page = 1,
   state
 }: Props):Promise<Issue[]> => {
-  await sleep(2)
-
   const params = new URLSearchParams()
 
   if (state) params.append('state', state)
