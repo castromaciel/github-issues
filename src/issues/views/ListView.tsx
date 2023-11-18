@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { Loading } from '../../shared/components'
-import { IssueList } from '../components/IssueList'
+import IssueListContainer from '../components/IssueListContainer'
 import { LabelPicker } from '../components/LabelPicker'
 import { useIssues } from '../hooks/useIssues'
 import { State } from '../interfaces'
@@ -25,17 +24,13 @@ const ListView = () => {
     <div className="row mt-5">
       
       <div className="col-8">
-        {
-          issuesQuery.isLoading 
-            ? <Loading />
-            : (
-              <IssueList
-                issues={issuesQuery.data || []}
-                state={state}
-                onStateChanged={(newState) => setState(newState)}
-              />
-            )
-        }
+        <IssueListContainer 
+          isLoading={issuesQuery.isLoading}
+          onStateChanged={(newState) => setState(newState)}
+          issues={issuesQuery.data || []}
+          state={state}
+        />
+
         <div className="d-flex mt-2 justify-content-between align-items-center">
           <button
             type="button"

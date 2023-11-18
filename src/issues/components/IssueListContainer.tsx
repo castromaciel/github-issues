@@ -1,15 +1,20 @@
 import { FC } from 'react'
+import { IssueSkeleton } from '../../shared/components'
 import { Issue, State } from '../interfaces'
 import { IssueItem } from './IssueItem'
 
-interface Props {
+interface IssueListContainerProps {
+  isLoading: boolean
   issues: Issue[]
   state?: State
   onStateChanged: (state?: State) => void
 }
 
-export const IssueList: FC<Props> = ({
-  issues, onStateChanged, state
+const IssueListContainer: FC<IssueListContainerProps> = ({
+  isLoading,
+  issues,
+  onStateChanged,
+  state
 }) => (
   <div className="card border-white">
     <div className="card-header bg-dark-01">
@@ -30,7 +35,6 @@ export const IssueList: FC<Props> = ({
             onClick={() => onStateChanged(State.Open)}
           >
             Open
-
           </button>
         </li>
         <li className="nav-item">
@@ -40,13 +44,18 @@ export const IssueList: FC<Props> = ({
             onClick={() => onStateChanged(State.Closed)}
           >
             Closed
-
           </button>
         </li>
       </ul>
     </div>
     <div className="bg-dark-01 card-body text-dark">
-      { issues.map((issue) => (<IssueItem key={issue.id} issue={issue} />)) }                
+      {
+        isLoading
+          ? [1, 2, 3, 4, 5].map((value) => (<IssueSkeleton key={value} />))
+          : issues.map((issue) => (<IssueItem key={issue.id} issue={issue} />))
+      }                
     </div>
   </div>
 )
+
+export default IssueListContainer
